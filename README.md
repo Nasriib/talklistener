@@ -1,5 +1,6 @@
 # check_off_2
 Talker and Listener
+```
 git clone https://github.com/ros2/demos/ 
 git pull
 Delete all other files and keep demo_nodes_py folders as shown below
@@ -13,6 +14,7 @@ colcon build note if don't work use one under
 colcon build --allow-overriding demo_nodes_py
 make talker
 source ./install/setup.bash
+```
 ros2 run demo_nodes_py talker
 new terminal
 cd ros2_ws/
