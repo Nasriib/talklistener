@@ -32,9 +32,8 @@ class Talker(Node):
 
     def timer_callback(self):
         msg = String()
+        msg.data = 'Hello World: {0}'.format(num2words(self.i))
         self.i += 1
-        new = num2words(self.i) 
-        msg.data = 'Hello World:{0} '.format(new)
         self.get_logger().info('Publishing: "{0}"'.format(msg.data))
         self.pub.publish(msg)
 
