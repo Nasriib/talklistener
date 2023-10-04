@@ -13,11 +13,12 @@
 # limitations under the License.
 
 import sys
-from word2number import w2n
+
 import rclpy
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-
+from num2words import num2words
+from word2number import w2n
 from std_msgs.msg import String
 
 
@@ -28,9 +29,10 @@ class Listener(Node):
         self.sub = self.create_subscription(String, 'chatter', self.chatter_callback, 10)
 
     def chatter_callback(self, msg):
-        x,y = msg.data.split(":") 
-        new = w2n.word_to_num(y)
-        self.get_logger().info('Ahmod Riddick heard: [ %s %d]' % (x,new))
+          
+        m = msg.data.split(':')[0].strip()
+        
+        self.get_logger().info('Nasri heard: [ECE3432 -> %s: %d]' % (m, w2n.word_to_num(msg.data)))
 
 
 def main(args=None):
