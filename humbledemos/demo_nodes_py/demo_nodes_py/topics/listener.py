@@ -17,7 +17,6 @@ import sys
 import rclpy
 from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from num2words import num2words
 from word2number import w2n
 from std_msgs.msg import String
 
